@@ -28,6 +28,7 @@ public class UserController {
      */
     @RequestMapping(value = "login.do",method = RequestMethod.POST)
     @ResponseBody
+    //加入@ResponseBody注解，可以将数据转换为JSON，提供给前端Ajax请求使用
     public ServerResponse<User> login(String username, String password, HttpSession session){
         //service-->mybatis-->dao
         ServerResponse<User> response=iUserService.login(username,password);
